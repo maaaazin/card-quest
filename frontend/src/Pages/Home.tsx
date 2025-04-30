@@ -23,10 +23,9 @@ const Home: React.FC = () => {
             Join Existing Game
           </button>
           </Link>
-        
-        <Link to="/rules" className="rules-link">
-        <button>
-          How to Play
+        <Link to="/rules">
+        <button className='action-button rules'>
+          Rules
         </button>
         </Link>
         </div>
