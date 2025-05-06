@@ -37,6 +37,7 @@ const JoinGame: React.FC = () => {
   };
 
   return (
+    <div className="joingamemainpage">
     <div className="join-game-container">
       <h1>Join a Game</h1>
       <p className="instructions">
@@ -65,6 +66,7 @@ const JoinGame: React.FC = () => {
           {isLoading ? 'Joining Game...' : 'Join Game'}
         </button>
       </form>
+    </div>
     </div>
   );
 };
