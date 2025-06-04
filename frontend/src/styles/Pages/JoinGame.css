@@ -68,7 +68,7 @@ border-radius: 16px;
 }
 
 .join-game-button {
-	background-color: #4a90e2;
+	background-color: #16A085;
 	color: white;
 	border: none;
 	padding: 1rem;
@@ -80,7 +80,7 @@ border-radius: 16px;
 }
 
 .join-game-button:hover {
-	background-color: #357abd;
+	background-color: #1c8671;
 }
 
 .join-game-button:disabled {
