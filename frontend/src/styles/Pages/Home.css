@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=VT323&display=swap');
 
-
 .home-container {
 	min-height: 100vh;
 	display: flex;
@@ -9,7 +8,6 @@
 	background: linear-gradient(135deg, #e24a5e 1%, #043e78 100%);
 	padding: 2rem;
     font-family: 'VT323', monospace;
-    
 }
 
 .home-content {
@@ -21,9 +19,8 @@
 	border-radius: 15px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(245,245,245,0.7));
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-border-radius: 16px;
-
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
 }
 
 .home-content h1 {
@@ -53,7 +50,6 @@ button {
 	margin-bottom: 1rem;
     font-size: medium;
     font-weight: 10;
-    
 }
 
 .action-button {
@@ -82,8 +78,9 @@ button {
 	color: white;
     border: none;
 }
+
 .action-button.rules {
 	background-color: #C0392B;
 	color: white;
     border: none;
-}
+} 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Pages/CreateGame.css';
 
 interface CardInputs {
   A: string;
@@ -68,39 +67,42 @@ const CreateGame: React.FC = () => {
   };
 
   return (
-    <div className="create-game-container">
-      <h1>Create Your Cards</h1>
-      <p className="instructions">
-        Enter four numbers between 0 and 9 that add up to exactly 20
-      </p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#043e78] to-[#032a52] p-8">
+      <div className="max-w-2xl w-full bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+        <h1 className="text-4xl font-bold text-white mb-4 text-center">Create Your Cards</h1>
+        <p className="text-lg text-gray-200 mb-8 text-center">
+          Enter four numbers between 0 and 9 that add up to exactly 20
+        </p>
 
-      <form onSubmit={handleSubmit} className="card-form">
-        <div className="card-inputs">
-          {Object.entries(cards).map(([card, value]) => (
-            <div key={card} className="card-input-group">
-              <label htmlFor={card}>Card {card}</label>
-              <input
-                type="text"
-                id={card}
-                value={value}
-                onChange={(e) => handleCardChange(card as keyof CardInputs, e.target.value)}
-                maxLength={1}
-                placeholder="0-9"
-              />
-            </div>
-          ))}
-        </div>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {Object.entries(cards).map(([card, value]) => (
+              <div key={card} className="space-y-2">
+                <label htmlFor={card} className="block text-white">Card {card}</label>
+                <input
+                  type="text"
+                  id={card}
+                  value={value}
+                  onChange={(e) => handleCardChange(card as keyof CardInputs, e.target.value)}
+                  maxLength={1}
+                  placeholder="0-9"
+                  className="w-full p-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+            ))}
+          </div>
 
-        {error && <p className="error-message">{error}</p>}
+          {error && <p className="text-red-400 text-center">{error}</p>}
 
-        <button 
-          type="submit" 
-          className="create-game-button"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Creating Game...' : 'Create Game'}
-        </button>
-      </form>
+          <button 
+            type="submit" 
+            className="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Creating Game...' : 'Create Game'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

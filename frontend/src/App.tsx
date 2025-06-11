@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css'
 import Home from "./Pages/Home";
 import Rules from "./Pages/Rules";
 import CreateGame from "./Pages/CreateGame";
@@ -10,7 +9,7 @@ import Game from './Pages/Game';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="app">
+      <div className="min-h-screen font-sans antialiased bg-gray-100 text-gray-800">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

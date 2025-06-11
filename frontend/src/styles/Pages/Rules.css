@@ -1,0 +1,83 @@
+.container {
+    min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #e24a5e 1%, #043e78 100%);
+	padding: 2rem;
+    font-family: 'VT323', monospace;
+}
+
+.rules-box {
+    width: 800px;
+    min-height: 520px;
+	text-align: center;
+	background-color: white;
+	padding: 2rem;
+	border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(245,245,245,0.7));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.rules-title {
+	color: #333;
+	font-size: 60px;
+	margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.rules-text {
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.game-flow-title {
+	color: #333;
+	font-size: 30px;
+	margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.game-flow-list {
+	list-style-type: decimal;
+	list-style-position: inside;
+	color: #666;
+	font-size: 1.2rem;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-flow-list li {
+	margin-bottom: 0.5rem;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+}
+
+.play-button {
+    width: 400px;
+    height: 65px;
+	background-color: #C0392B;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.play-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+} 
