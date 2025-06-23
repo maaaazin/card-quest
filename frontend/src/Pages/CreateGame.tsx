@@ -8,14 +8,13 @@ interface CardInputs {
   D: string;
 }
 
-const CreateGame: React.FC = () => {
+const CreateGame = () => {
   const navigate = useNavigate();
   const [cards, setCards] = useState<CardInputs>({ A: '', B: '', C: '', D: '' });
   const [error, setError] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleCardChange = (card: keyof CardInputs, value: string) => {
-    // Only allow numbers
     if (!/^\d*$/.test(value)) return;
     
     setCards(prev => ({
@@ -55,10 +54,8 @@ const CreateGame: React.FC = () => {
 
     setIsLoading(true);
     try {
-      // TODO: Implement game creation API call
-      // For now, just simulate a delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      navigate('/game'); // Navigate to game page after creation
+      navigate('/game');
     } catch (err) {
       setError('Failed to create game. Please try again.');
     } finally {
