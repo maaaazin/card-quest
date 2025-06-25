@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Rules from "./Pages/Rules";
@@ -6,7 +5,7 @@ import CreateGame from "./Pages/CreateGame";
 import JoinGame from "./Pages/JoinGame";
 import Game from './Pages/Game';
 
-const App: React.FC = () => {
+const App= () => {
   return (
     <Router>
       <div className="min-h-screen font-sans antialiased bg-gray-100 text-gray-800">

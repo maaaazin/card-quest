@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const RulesPage = () => {
@@ -27,7 +26,7 @@ const RulesPage = () => {
 
         <div className="flex justify-center">
           <Link to="/home" className="w-full max-w-[400px]">
-            <button className="w-full h-[65px] px-8 py-4 rounded-lg text-[1.1rem] font-semibold text-white bg-[#C0392B] shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:transform hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-none cursor-pointer">
+            <button className="w-full h-[65px] px-8 py-4 rounded-lg text-[1.1rem] font-semibold text-white bg-[#13A085] shadow-[0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-200 hover:transform hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] border-none cursor-pointer">
               PLAY
             </button>
           </Link>

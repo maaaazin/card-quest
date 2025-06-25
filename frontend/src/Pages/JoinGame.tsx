@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
 
 const JoinGame = () => {
   const navigate = useNavigate();
   const [gameCode, setGameCode] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [connecting, setConnecting] = useState(false);
+  const [connected, setConnected] = useState(false);
 
   const handleGameCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Only allow alphanumeric characters
@@ -23,17 +26,38 @@ const JoinGame = () => {
     }
 
     setIsLoading(true);
+    setConnecting(true);
     try {
-      // TODO: Implement game joining API call
-      // For now, just simulate a delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      navigate('/game'); // Navigate to game page after joining
+      setIsLoading(false);
+      // Simulate connecting
+      setTimeout(() => setConnected(true), 3000);
     } catch (err) {
       setError('Failed to join game. Please check the game code and try again.');
-    } finally {
       setIsLoading(false);
+      setConnecting(false);
     }
   };
+
+  const handleCancel = () => {
+    setConnecting(false);
+    setConnected(false);
+    setGameCode('');
+  };
+
+  if (connecting) {
+    return (
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-700 ${connected ? 'bg-gradient-to-b from-[#043e78] to-[#032a52]' : 'bg-white'}`}>
+        <div className="flex flex-col items-center justify-center gap-8">
+          <div className="text-5xl font-bold text-[#053C75] tracking-widest">{gameCode}</div>
+          <div className="text-xl text-[#333] text-center">Connecting...</div>
+          <BounceLoader size={70} color="#053C75" speedMultiplier={1.5} />
+          <button onClick={handleCancel} className="mt-6 px-8 py-3 rounded-lg bg-[#e24a5e] text-white font-semibold text-lg shadow hover:bg-[#c0392b] transition-colors">Cancel</button>
+          {connected && <div className="text-green-600 text-lg font-bold mt-4">Connected! (Simulated)</div>}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e24a5e] to-[#043e78] p-8 font-['VT323']">
@@ -52,7 +76,7 @@ const JoinGame = () => {
               placeholder="Enter game code"
               maxLength={6}
               autoFocus
-              className="w-full max-w-[300px] p-4 text-2xl text-center tracking-[0.5rem] border-2 border-[#ddd] rounded-md transition-colors duration-200 focus:outline-none focus:border-[#4a90e2]"
+              className="w-full max-w-[340px] min-w-[220px] p-4 text-2xl text-center border-2 border-[#ddd] rounded-md transition-colors duration-200 focus:outline-none focus:border-[#4a90e2]"
             />
           </div>
 

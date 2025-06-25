@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Component() {
+export default function Game() {
   const [myCards] = useState([
     { id: 1, number: 7, label: "A" },
     { id: 2, number: 3, label: "B" },
